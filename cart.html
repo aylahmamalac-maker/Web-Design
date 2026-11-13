@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Cart | ONIN Patisserie</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="nav">
+<div class="container">
+
+<a class="logo" href="index.html">ONIN</a>
+
+<button class="hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
+&#9776;
+</button>
+
+<ul class="nav-links" id="nav-links">
+
+<li>
+<a href="index.html">Home</a>
+</li>
+
+<li>
+<a href="product.html">Products</a>
+</li>
+
+<li>
+<a href="aboutus.html">About Us</a>
+</li>
+
+<li>
+<a href="contactus.html">Contact Us</a>
+</li>
+
+<li>
+<a href="cart.html" class="active">
+Cart (<span id="cart-count">0</span>)
+</a>
+</li>
+
+</ul>
+
+</div>
+</header>
+
+
+<main>
+
+<section class="page-head">
+
+<div class="container">
+
+<h1>YOUR CART</h1>
+
+</div>
+
+</section>
+
+
+<section style="padding-top:0">
+
+<div class="container">
+
+<div id="confirmation" class="confirm hidden">
+
+<h2>ORDER CONFIRMED</h2>
+
+<p class="lead" style="margin:16px auto">
+Thank you for choosing ONIN Patisserie.<br>
+Your order has been received and is now being prepared.
+</p>
+
+<p>Order Number:</p>
+
+<div class="order-no" id="order-no">
+ONIN-XXXXXX
+</div>
+
+<br>
+
+<a class="btn" href="product.html">
+Browse Products
+</a>
+
+</div>
+
+
+<div id="cart-section">
+
+<div id="cart-empty" class="empty center hidden">
+
+<h2>YOUR CART IS EMPTY</h2>
+
+<a class="btn solid" href="product.html">
+Browse Products
+</a>
+
+</div>
+
+
+<div id="cart-full" class="hidden">
+
+<div class="cart-row cart-head">
+<span>Product</span>
+<span>Price</span>
+<span>Quantity</span>
+<span>Subtotal</span>
+<span></span>
+</div>
+
+
+<div id="cart-items"></div>
+
+
+<div class="totals">
+
+<div>
+<span>Subtotal</span>
+<span id="subtotal">₱0</span>
+</div>
+
+<div>
+<span>Delivery Fee</span>
+<span id="delivery">₱50</span>
+</div>
+
+<div class="grand">
+<span>Total</span>
+<span id="total">₱0</span>
+</div>
+
+</div>
+
+
+<form class="checkout" id="checkout-form" novalidate>
+
+<h2>CHECKOUT</h2>
+
+
+<label for="name">
+Full Name
+</label>
+
+<input 
+type="text" 
+id="name" 
+autocomplete="name"
+>
+
+<div class="error" id="name-error"></div>
+
+
+<label for="phone">
+Contact Number
+</label>
+
+<input 
+type="tel" 
+id="phone" 
+autocomplete="tel"
+>
+
+<div class="error" id="phone-error"></div>
+
+
+<label for="address">
+Delivery Address
+</label>
+
+<textarea id="address"></textarea>
+
+<div class="error" id="address-error"></div>
+
+
+<label for="notes">
+Delivery Notes
+</label>
+
+<textarea id="notes"></textarea>
+
+
+<label for="payment">
+Payment Method
+</label>
+
+<select id="payment">
+
+<option value="">
+Select payment method
+</option>
+
+<option>
+Cash on Delivery
+</option>
+
+<option>
+GCash
+</option>
+
+</select>
+
+<div class="error" id="payment-error"></div>
+
+
+<label class="check" for="terms">
+
+<input 
+type="checkbox" 
+id="terms"
+>
+
+I agree to the Terms of Service and Privacy Policy.
+
+</label>
+
+<div class="error" id="terms-error"></div>
+
+
+<button 
+type="submit" 
+class="btn solid" 
+style="margin-top:14px"
+>
+PLACE ORDER
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<div class="toast" id="toast" role="status"></div>
+
+
+<footer class="footer">
+
+<div class="container">
+
+<span class="logo">
+ONIN PATISSERIE
+</span>
+
+
+<ul>
+
+<li>
+<a href="index.html">Home</a>
+</li>
+
+<li>
+<a href="product.html">Products</a>
+</li>
+
+<li>
+<a href="aboutus.html">About Us</a>
+</li>
+
+<li>
+<a href="contactus.html">Contact</a>
+</li>
+
+<li>
+<a href="#">Terms of Service</a>
+</li>
+
+<li>
+<a href="#">Privacy Policy</a>
+</li>
+
+</ul>
+
+
+<small>
+&copy; 2026 ONIN Patisserie. Crafted with care.
+</small>
+
+</div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

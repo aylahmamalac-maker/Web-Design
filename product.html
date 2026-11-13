@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Products | ONIN Patisserie</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+
+<style>
+
+/* =================================
+   PRODUCT CARD
+================================= */
+
+.product-card {
+    height: 420px;
+    width: 100%;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+
+/* =================================
+   FIXED PRODUCT IMAGE
+================================= */
+
+.product-card .visual {
+    width: 100%;
+    height: 150px;
+    min-height: 150px;
+    max-height: 150px;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+
+    margin-bottom: 12px;
+
+    box-sizing: border-box;
+}
+
+.product-card .visual img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+}
+
+
+/* =================================
+   PRODUCT NAME
+================================= */
+
+.product-card h3 {
+    height: 28px;
+
+    margin: 0 0 6px;
+
+    overflow: hidden;
+
+    flex-shrink: 0;
+}
+
+
+/* =================================
+   PRODUCT DESCRIPTION
+================================= */
+
+.product-card > p {
+    height: 42px;
+
+    margin: 0 0 8px;
+
+    overflow: hidden;
+
+    line-height: 1.4;
+
+    flex-shrink: 0;
+}
+
+
+/* =================================
+   PRICE
+================================= */
+
+.product-card .price {
+    height: 25px;
+
+    margin-bottom: 10px;
+
+    flex-shrink: 0;
+}
+
+
+/* =================================
+   QUANTITY
+================================= */
+
+.product-card .qty {
+    width: 100%;
+    height: 30px;
+
+    display: grid;
+
+    grid-template-columns: 30px minmax(0, 1fr) 30px;
+
+    gap: 6px;
+
+    box-sizing: border-box;
+
+    flex-shrink: 0;
+}
+
+.product-card .qty button {
+    width: 30px;
+    height: 30px;
+
+    min-width: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+}
+
+.product-card .qty input {
+    width: 100%;
+    height: 30px;
+
+    min-width: 0;
+
+    padding: 0;
+
+    text-align: center;
+
+    box-sizing: border-box;
+}
+
+
+/* =================================
+   ACTION BUTTONS
+================================= */
+
+.product-card .actions {
+    width: 100%;
+    height: 38px;
+
+    display: grid;
+
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+    gap: 8px;
+
+    margin-top: 10px;
+
+    box-sizing: border-box;
+
+    flex-shrink: 0;
+}
+
+.product-card .actions .btn {
+    width: 100%;
+    height: 38px;
+
+    min-width: 0;
+
+    padding: 0 5px;
+
+    box-sizing: border-box;
+
+    font-size: 11px;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =================================
+   MOBILE
+================================= */
+
+@media (max-width: 600px) {
+
+    .product-card {
+        height: 420px;
+    }
+
+    .product-card .visual {
+        height: 150px;
+        min-height: 150px;
+        max-height: 150px;
+    }
+
+    .product-card .actions .btn {
+        font-size: 10px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =================================
+     NAVIGATION
+================================= -->
+
+<header class="nav">
+
+<div class="container">
+
+<a class="logo" href="index.html">
+ONIN
+</a>
+
+
+<button
+class="hamburger"
+id="hamburger"
+aria-label="Menu"
+aria-expanded="false">
+&#9776;
+</button>
+
+
+<ul class="nav-links" id="nav-links">
+
+<li>
+<a href="index.html">
+Home
+</a>
+</li>
+
+<li>
+<a href="product.html" class="active">
+Products
+</a>
+</li>
+
+<li>
+<a href="aboutus.html">
+About Us
+</a>
+</li>
+
+<li>
+<a href="contactus.html">
+Contact Us
+</a>
+</li>
+
+<li>
+<a href="cart.html">
+Cart (<span id="cart-count">0</span>)
+</a>
+</li>
+
+</ul>
+
+</div>
+
+</header>
+
+
+
+<!-- =================================
+     MAIN
+================================= -->
+
+<main>
+
+
+<section class="page-head">
+
+<div class="container">
+
+<h1>
+OUR PÂTISSERIE
+</h1>
+
+<p
+class="lead"
+style="margin:16px auto 0">
+
+Choose your favorite and make it yours.
+
+</p>
+
+</div>
+
+</section>
+
+
+
+<section style="padding-top:0">
+
+<div class="container">
+
+<div class="grid">
+
+
+<!-- =================================
+     PRODUCT 1
+================================= -->
+
+<article
+class="card product-card"
+id="tarte"
+data-id="tarte"
+data-name="Tarte aux fruits"
+data-price="280">
+
+
+<div class="visual">
+
+<img
+src="tarte.jpg"
+alt="Tarte aux fruits">
+
+</div>
+
+
+<h3>
+Tarte aux fruits
+</h3>
+
+
+<p>
+Buttery tart shell, pastry cream, and fresh seasonal fruits.
+</p>
+
+
+<div class="price">
+₱280
+</div>
+
+
+<div class="qty">
+
+<button
+type="button"
+data-q="-1"
+aria-label="Decrease">
+&minus;
+</button>
+
+
+<input
+type="text"
+inputmode="numeric"
+value="1"
+aria-label="Quantity">
+
+
+<button
+type="button"
+data-q="1"
+aria-label="Increase">
++
+</button>
+
+</div>
+
+
+<div class="actions">
+
+<button
+type="button"
+class="btn"
+data-act="add">
+Add to Cart
+</button>
+
+
+<button
+type="button"
+class="btn solid"
+data-act="buy">
+Buy Now
+</button>
+
+</div>
+
+
+</article>
+
+
+
+<!-- =================================
+     PRODUCT 2
+================================= -->
+
+<article
+class="card product-card"
+id="chocolat"
+data-id="chocolat"
+data-name="Pain au Chocolat"
+data-price="240">
+
+
+<div class="visual">
+
+<img
+src="chocolat.jpg"
+alt="Pain au Chocolat">
+
+</div>
+
+
+<h3>
+Pain au Chocolat
+</h3>
+
+
+<p>
+Rich chocolate mousse with a delicate cocoa finish.
+</p>
+
+
+<div class="price">
+₱240
+</div>
+
+
+<div class="qty">
+
+<button
+type="button"
+data-q="-1"
+aria-label="Decrease">
+&minus;
+</button>
+
+
+<input
+type="text"
+inputmode="numeric"
+value="1"
+aria-label="Quantity">
+
+
+<button
+type="button"
+data-q="1"
+aria-label="Increase">
++
+</button>
+
+</div>
+
+
+<div class="actions">
+
+<button
+type="button"
+class="btn"
+data-act="add">
+Add to Cart
+</button>
+
+
+<button
+type="button"
+class="btn solid"
+data-act="buy">
+Buy Now
+</button>
+
+</div>
+
+
+</article>
+
+
+
+<!-- =================================
+     PRODUCT 3
+================================= -->
+
+<article
+class="card product-card"
+id="vanille"
+data-id="chocolanay"
+data-name="Chocolanay"
+data-price="220">
+
+
+<div class="visual">
+
+<img
+src="yawa.jpg"
+alt="Chocolanay">
+
+</div>
+
+
+<h3>
+Chocolanay
+</h3>
+
+
+<p>
+Rich chocolate lava with a soft, elegant texture.
+</p>
+
+
+<div class="price">
+₱220
+</div>
+
+
+<div class="qty">
+
+<button
+type="button"
+data-q="-1"
+aria-label="Decrease">
+&minus;
+</button>
+
+
+<input
+type="text"
+inputmode="numeric"
+value="1"
+aria-label="Quantity">
+
+
+<button
+type="button"
+data-q="1"
+aria-label="Increase">
++
+</button>
+
+</div>
+
+
+<div class="actions">
+
+<button
+type="button"
+class="btn"
+data-act="add">
+Add to Cart
+</button>
+
+
+<button
+type="button"
+class="btn solid"
+data-act="buy">
+Buy Now
+</button>
+
+</div>
+
+
+</article>
+
+
+
+<!-- =================================
+     PRODUCT 4
+================================= -->
+
+<article
+class="card product-card"
+id="berry"
+data-id="berry"
+data-name="Crème brûlée"
+data-price="260">
+
+
+<div class="visual">
+
+<img
+src="ywa.jpg"
+alt="Crème brûlée">
+
+</div>
+
+
+<h3>
+Crème brûlée
+</h3>
+
+
+<p>
+A classic dessert made of a rich, creamy vanilla custard base topped with a hard, crunchy layer of caramelized sugar.
+</p>
+
+
+<div class="price">
+₱260
+</div>
+
+
+<div class="qty">
+
+<button
+type="button"
+data-q="-1"
+aria-label="Decrease">
+&minus;
+</button>
+
+
+<input
+type="text"
+inputmode="numeric"
+value="1"
+aria-label="Quantity">
+
+
+<button
+type="button"
+data-q="1"
+aria-label="Increase">
++
+</button>
+
+</div>
+
+
+<div class="actions">
+
+<button
+type="button"
+class="btn"
+data-act="add">
+Add to Cart
+</button>
+
+
+<button
+type="button"
+class="btn solid"
+data-act="buy">
+Buy Now
+</button>
+
+</div>
+
+
+</article>
+
+
+
+<!-- =================================
+     PRODUCT 5
+================================= -->
+
+<article
+class="card product-card"
+id="caramel"
+data-id="caramel"
+data-name="Caramel Lune"
+data-price="250">
+
+
+<div class="visual">
+
+<img
+src="dw.jpg"
+alt="Éclair">
+
+</div>
+
+
+<h3>
+Éclair
+</h3>
+
+
+<p>
+filled with custard or pastry cream, and topped with icing or chocolate glaze.
+</p>
+
+
+<div class="price">
+₱250
+</div>
+
+
+<div class="qty">
+
+<button
+type="button"
+data-q="-1"
+aria-label="Decrease">
+&minus;
+</button>
+
+
+<input
+type="text"
+inputmode="numeric"
+value="1"
+aria-label="Quantity">
+
+
+<button
+type="button"
+data-q="1"
+aria-label="Increase">
++
+</button>
+
+</div>
+
+
+<div class="actions">
+
+<button
+type="button"
+class="btn"
+data-act="add">
+Add to Cart
+</button>
+
+
+<button
+type="button"
+class="btn solid"
+data-act="buy">
+Buy Now
+</button>
+
+</div>
+
+
+</article>
+
+
+
+<!-- =================================
+     PRODUCT 6
+================================= -->
+
+<article
+class="card product-card"
+id="matcha"
+data-id="matcha"
+data-name="Matcha Velours"
+data-price="250">
+
+
+<div class="visual">
+
+<img
+src="f.jpg"
+alt="Croissannt Classique">
+
+</div>
+
+
+<h3>
+Croissannt Classique
+</h3>
+
+
+<p>
+Velvety matcha ganache with a whisper of white chocolate.
+</p>
+
+
+<div class="price">
+₱250
+</div>
+
+
+<div class="qty">
+
+<button
+type="button"
+data-q="-1"
+aria-label="Decrease">
+&minus;
+</button>
+
+
+<input
+type="text"
+inputmode="numeric"
+value="1"
+aria-label="Quantity">
+
+
+<button
+type="button"
+data-q="1"
+aria-label="Increase">
++
+</button>
+
+</div>
+
+
+<div class="actions">
+
+<button
+type="button"
+class="btn"
+data-act="add">
+Add to Cart
+</button>
+
+
+<button
+type="button"
+class="btn solid"
+data-act="buy">
+Buy Now
+</button>
+
+</div>
+
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+
+<!-- =================================
+     TOAST
+================================= -->
+
+<div
+class="toast"
+id="toast"
+role="status">
+</div>
+
+
+
+<!-- =================================
+     FOOTER
+================================= -->
+
+<footer class="footer">
+
+<div class="container">
+
+
+<span class="logo">
+ONIN PATISSERIE
+</span>
+
+
+<ul>
+
+<li>
+<a href="index.html">
+Home
+</a>
+</li>
+
+<li>
+<a href="product.html">
+Products
+</a>
+</li>
+
+<li>
+<a href="aboutus.html">
+About Us
+</a>
+</li>
+
+<li>
+<a href="contactus.html">
+Contact
+</a>
+</li>
+
+<li>
+<a href="#">
+Terms of Service
+</a>
+</li>
+
+<li>
+<a href="#">
+Privacy Policy
+</a>
+</li>
+
+</ul>
+
+
+<small>
+&copy; 2026 ONIN Patisserie. Crafted with care.
+</small>
+
+
+</div>
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
